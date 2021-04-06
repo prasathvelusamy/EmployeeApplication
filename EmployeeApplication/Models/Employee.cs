@@ -9,9 +9,12 @@ namespace EmployeeApplication.Models
     public class Employee
     {
         public Int32 ID { get; set; }
+
         public string Name { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")] 
         public DateTime DateOfBirth { get; set; }
+
         public Int32 Salary { get; set; }
     }
 }
