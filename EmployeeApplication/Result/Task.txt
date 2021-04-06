@@ -1,0 +1,11 @@
+Description
+
+1.       Write a web page to store the Name, date of birth, Salary of Employees. Display the details in a grid with the current age. (PFA screenshot)
+			Option: 1 The page can be in Angular/React/Knockout with ASP.NET Web API (.Net core is preferable) or
+			Option: 2 It can be in ASP.NET MVC (.Net core is preferable).
+
+2.       The candidates are free to choose the databases (SQL Server, SQLite, etc), and other components of their choice.
+
+3.       The code should follow Microsoft recommended coding practices and unit tests.
+
+4.       The candidates can share the code either in Zip format or via GitHub.

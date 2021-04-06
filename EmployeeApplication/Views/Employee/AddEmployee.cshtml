@@ -1,0 +1,91 @@
+﻿@model IEnumerable<EmployeeApplication.Models.Employee>
+
+@{
+    ViewBag.Title = "ShowEmployees";
+}
+<style>
+    td {
+        padding: 3px;
+    }
+
+    label {
+        font-weight: normal;
+        width: 75px;
+    }
+
+    input {
+        width: 220px;
+    }
+
+    .createButton {
+        width: 79px;
+        border-radius: 4px;
+        background-color: lightsteelblue;
+        border: 1px solid black;
+    }
+    .newrows:nth-of-type(odd) {
+        background-color: #eaf2d3;
+    }
+
+    .newrows:nth-of-type(even) {
+        background-color: #ffffff;
+    }
+    .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+        border: 1px solid #98bf21;
+    }
+</style>
+<div>
+
+    <div>
+        @using (Html.BeginForm())
+        {
+
+            <div>
+                <table>
+                    <tr><td>@Html.Label("Name")</td><td>@Html.Editor("Name")</td><td></td></tr>
+                    <tr>
+                        <td>@Html.Label("DOB")</td>
+                        <td>
+                            <input id="DateOfBirth" name="DateOfBirth" type="date">
+                        </td>
+                        <td>@Html.ValidationMessage("DateOfBirth", "")</td>
+                    </tr>
+                    <tr><td>@Html.Label("Salary")</td><td>@Html.Editor("Salary")</td><td> @Html.ValidationMessage("Salary", "")</td></tr>
+                    <tr><td></td><td><input type="submit" value="Add" class="createButton" /></td><td></td></tr>
+                </table>
+            </div>
+        }
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <tr style="background-color: #a7c97e;color: white;">
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="newrows">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salary)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
